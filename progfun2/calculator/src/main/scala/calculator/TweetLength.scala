@@ -28,9 +28,7 @@ object TweetLength {
      * is not implemented in Scala.js 0.6.2.
      */
     if (text.isEmpty) 0
-    else {
-      text.length - text.init.zip(text.tail).count(
-          (Character.isSurrogatePair _).tupled)
+    else { text.length - text.init.zip(text.tail).count((Character.isSurrogatePair _).tupled)
     }
   }
 }
